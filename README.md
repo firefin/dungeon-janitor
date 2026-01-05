@@ -6,13 +6,15 @@ Play as a janitor who's hired to clean up dungeons after previous adventurer's a
 
 
 
-# The Abilities Framework
+# The Ability Framework
 
 ### Architecture Overview
 
-![Image helping visualization]() not here yet.
+[Document showing flow](/DungeonJanitorCEN4090L/ABILITIES.md)
 
-## The Core Components
+## Some title
+
+### Core Components
 
 | Component | Responsibility |
 |-----------|----------------|

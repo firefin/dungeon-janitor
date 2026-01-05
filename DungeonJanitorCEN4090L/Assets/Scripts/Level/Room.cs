@@ -20,14 +20,15 @@ public class Room
         InitializeTiles();
     }
     // Function that creates tiles at each coordinate for world generation.
+    // Has been edited to use local coordinates.
     private void InitializeTiles()
     {
         for (int x = 0; x < Width; x++)
         {
             for (int y = 0; y < Height; y++)
             {
-                Vector2 worldPos = Position + new Vector2(x * TileSize, y * TileSize);
-                tiles[x, y] = new Tile(worldPos);
+                tiles[x, y] = new Tile(x, y);
+                tiles[x, y].parentRoom = this;
             }
         }
     }
@@ -71,6 +72,12 @@ public class Room
                 {
                     SetWall(x, y);
                     SetFeature(x, y, FeatureID.WALL);
+                }
+                else
+                {
+                    Tile t = GetTile(x, y);
+                    t.IsWall = false;
+                    t.IsFloor = true;
                 }
             }
         }

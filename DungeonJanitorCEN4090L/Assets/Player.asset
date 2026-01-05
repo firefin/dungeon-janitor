@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f6e7a7411cd56448ba7f9c774a5e78, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  broomWeapon: {fileID: 11400000, guid: 5c28f5f00cab93f40a806ed30a9ae6c6, type: 2}
+  maxHealth: 100
+  maxMana: 100
+  CurrentHealth: 100
+  CurrentMana: 60
+  Level: 1
+  Experience: 0
+  Damage: 0
+  BaseStrength: 0
+  Speed: 0
+  Weapon: {fileID: 11400000, guid: f3e85a9b1a30ffd4a8d4c8c0d44a72e8, type: 2}
+  Armor: {fileID: 0}
+  maxAbilitySlots: 3
+  equippedAbilities:
+  - {fileID: 11400000, guid: b757ec8f21b40a74d9211e886b92563a, type: 2}
+  - {fileID: 11400000, guid: 88a59efb68eac854ea283e00f7e030cc, type: 2}
+  - {fileID: 0}

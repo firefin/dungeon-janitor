@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 // Tile is a class that is used in level generation. Tiles are effectively chunks used for level generation.
@@ -12,11 +13,12 @@ public class Tile
 
     // Retrieves ID of the Feature on the tile, returns 0 on no feature.
     public int FeatureID { get; set; }
-    public Tile(Vector2 position)
+    public Room parentRoom;
+    public Tile(int x, int y)
     {
+        Position = new Vector2Int(x, y);
         IsFloor = true;
         IsWall = false;
-        Position = new Vector2Int((int)position.x, (int)position.y);
         FeatureID = 0;
     }
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2508e0171d9f45b110e81d847f605, type: 3}
+  m_Name: Elven Warbow
+  m_EditorClassIdentifier: 
+  displayName: Elven Warbow
+  icon: {fileID: 21300000, guid: 5a540aead06e2cb4994f6bd4a8c52ee6, type: 3}
+  price: 300
+  description: +60 damage
