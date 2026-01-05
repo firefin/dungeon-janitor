@@ -8,13 +8,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveInput;
     private bool isSprinting;
-
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction sprintAction;
-
+    private Rigidbody2D rb;
+    // Added Rigidbody logic
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
 
         // Get existing actions from your Player action map
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         sprintAction.performed += ctx => {
             isSprinting = true;
-            Debug.Log("Sprint started"); 
+            Debug.Log("Sprint started");
         };
         sprintAction.canceled += ctx => {
             isSprinting = false;
@@ -40,14 +41,18 @@ public class PlayerMovement : MonoBehaviour
         moveAction.Enable();
         sprintAction.Enable();
     }
+
     private void OnDisable()
     {
         moveAction.Disable();
         sprintAction.Disable();
     }
-    void Update()
+
+    void FixedUpdate()
     {
         float sprintMultiplier = isSprinting ? BASE_SPRINT_MULTIPLIER : 1f;
+        Vector2 move = moveInput.normalized;
+        rb.linearVelocity = move * (SPEED * sprintMultiplier);
 
         // Swift Steps passive 
         float finalSpeed = PassiveStats.ModifyMoveSpeed(SPEED);
